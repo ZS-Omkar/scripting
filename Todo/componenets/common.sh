@@ -2,5 +2,5 @@
 
 OS_PREREQ(){
   set-hostname ${COMPONENT}
-  apt update
+  apt update &>>"$LOG"
 }
