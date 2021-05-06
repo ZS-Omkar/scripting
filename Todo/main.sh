@@ -15,4 +15,4 @@ if [ "${USER_NAME}" != "root" ]; then
 fi
 
 export COMPONENT
-bash Todo/"${COMPONENT}".sh
+bash components/"${COMPONENT}".sh
