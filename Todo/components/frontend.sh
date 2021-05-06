@@ -5,17 +5,17 @@ source components/common.sh
 OS_PREREQ
 
 Head "Installing Nginx"
-apt install nginx -y &>>"$LOG"
+apt install nginx &>>"$LOG"
 Stat $?
 
 Head "Starting and enabling nginx"
 systemctl start nginx && systemctl enable nginx
 
 Head "Installing nodejs and npm"
-apt install nodejs -y &>>"$LOG"
+apt install nodejs &>>"$LOG"
 Stat $?
 
-apt install npm -y &>>"$LOG"
+apt install npm &>>"$LOG"
 Stat $?
 
 Head "changing the directory and creating a new directory"
