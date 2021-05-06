@@ -11,7 +11,7 @@ USER_NAME=$(whoami)
 
 if [ "${USER_NAME}" != "root" ]; then
   echo "You Should be a root user to perform this script, Try with sudo"
-  eixt1
+  eixt 1
 fi
 
 export COMPONENT
