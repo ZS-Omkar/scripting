@@ -5,7 +5,7 @@ source components/common.sh
 OS_PREREQ
 
 Head "Installing Nginx"
-sudo apt install nginx &>>"$LOG"
+apt install nginx &>>"$LOG"
 Stat $?
 
 Head "Installing nodejs and npm"
@@ -18,12 +18,12 @@ Stat $?
 Head "changing the directory and creating a new directory"
 cd /var/www/html && mkdir vue
 
-cd vue
+cd... vue
 
 Head "cloning the repo"
 git clone  https://github.com/zelar-soft-todoapp/frontend.git
 
-cd frontend
+cd... frontend
 
 Head "Installing the dependencies and run npm"
 npm install
