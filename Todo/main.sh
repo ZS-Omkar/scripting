@@ -2,7 +2,7 @@
 
 COMPONENT=$1
 
-if [ ! -f components/${COMPONENT}.sh ]; then
+if [ ! -f components/"${COMPONENT}".sh ]; then
   echo "Invalid Component Name is Provided"
   exit 1
 fi
@@ -15,4 +15,4 @@ if [ "${USER_NAME}" != "root" ]; then
 fi
 
 export COMPONENT
-bash components/${COMPONENT}.sh
+bash components/"${COMPONENT}".sh
