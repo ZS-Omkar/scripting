@@ -5,11 +5,11 @@ source components/common.sh
 OS_PREREQ
 
 HEAD "Installing Nginx"
-apt install nginx &>>$LOG
+apt install nginx &>$LOG
 
 HEAD "Installing nodejs and npm"
-apt install nodejs &>>$LOG
-apt install npm &>>$LOG
+apt install nodejs &>$LOG
+apt install npm &>$LOG
 
 HEAD "changing the directory and creating a new directory"
 cd /var/www/html && mkdir vue
@@ -22,7 +22,7 @@ git clone  https://github.com/zelar-soft-todoapp/frontend.git
 cd frontend
 
 HEAD "Installing the dependencies and run npm"
-npm install &>>$LOG
+npm install &>$LOG
 npm run build
 
 HEAD "Change the path of Nginx"
