@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source components/common.sh
+source Todo/common.sh
 
 OS_PREREQ
 

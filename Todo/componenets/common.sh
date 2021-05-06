@@ -1,6 +1,6 @@
 #!/bin/bash
 
 OS_PREREQ(){
-  set-hostname ${COMPONENT}
+  set-hostname "${COMPONENT}"
   apt update &>>"$LOG"
 }
