@@ -8,6 +8,9 @@ HEAD "Installing Nginx"
 apt install nginx -y &>>"$LOG"
 Stat $?
 
+HEAD "Starting and enabling nginx"
+systemctl start nginx && systemctl enable nginx
+
 HEAD "Installing nodejs and npm"
 apt install nodejs -y &>>"$LOG"
 Stat $?
@@ -34,7 +37,7 @@ HEAD "Change the path of Nginx"
 sed -i -e 's+/var/www/html+/var/www/html/vue/frontend/dist+g' /etc/nginx/sites-available/default
 
 HEAD "Restarting nginx services"
-systemclt restart nginx
+systemctl restart nginx
 systemctl enable nginx
 
 
