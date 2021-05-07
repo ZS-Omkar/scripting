@@ -25,6 +25,9 @@ export GOPATH=~/go
 go get
 go build
 
+Head "Now move the user services"
+mv /root/scripting/Todo/login/login.service /etc/systemd/system/multi-user.target
+
 Head "Restart login service"
 systemctl daemon-reload
 systemctl restart multi-user.target
