@@ -17,7 +17,7 @@ cd /var/www/html && mkdir vue
 cd vue
 
 Head "cloning the repo"
-git clone 'https://github.com/zelar-soft-todoapp/frontend.git'
+git clone https://github.com/ZS-Omkar/frontend.git
 
 cd frontend
 
