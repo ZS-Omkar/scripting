@@ -11,7 +11,7 @@ source ~/.profile
 go version
 
 Head "create a directory and cd into the directory and create one more directory"
-mkdir /go
+mkdir ~/go
 cd /go
 mkdir src
 cd src
@@ -21,7 +21,6 @@ git clone https://github.com/ZS-Omkar/login.git
 
 Head "Now cd into login, export go path and build go"
 cd login
-export GOPATH=/go
+export GOPATH=~/go
 go build
 
-./login
