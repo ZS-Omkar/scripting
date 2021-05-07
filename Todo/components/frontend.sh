@@ -23,7 +23,7 @@ cd frontend
 
 HEAD "Installing the dependencies and run npm"
 npm install &>$LOG
-npm run build
+npm run build &>LOG
 
 HEAD "Change the path of Nginx"
 sed -i -e 's+root /var/www/html+root /var/www/html/vue/frontend/dist+g' /etc/nginx/sites-available/default
