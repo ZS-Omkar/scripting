@@ -24,4 +24,4 @@ Head "Now move the user services"
 mv /home/todo/user/systemd.service /etc/systemd/system/users.service
 
 Head "Restart the services"
-systemctl daemon-reload && systemctl restart users && systemctl status users
+systemctl daemon-reload && systemctl start users && systemctl enable users
