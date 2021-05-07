@@ -12,7 +12,7 @@ go version
 
 Head "create a directory and cd into the directory and create one more directory"
 mkdir ~/go
-cd /go
+cd ~/go
 mkdir src
 cd src
 
