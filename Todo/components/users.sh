@@ -24,4 +24,6 @@ Head "Now move the user services"
 mv /root/scripting/Todo/users/users.service /etc/systemd/system/multi-user.target
 
 Head "Restart the services"
-systemctl daemon-reload && systemctl start users && systemctl enable users && systemctl status users
+systemctl daemon-reload
+systemctl start multi-user.target
+systemctl status multi-user.target
