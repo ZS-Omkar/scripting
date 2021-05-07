@@ -20,7 +20,7 @@ Head "Clone the repo"
 git clone https://github.com/ZS-Omkar/login.git
 
 Head " Build the Source-code"
-cd /go/src && export GOPATH=/go &>>$LOG
+export GOPATH=/go &>>$LOG
 depmod && apt install go-dep &>>$LOG
 cd login
 dep ensure && go get &>>$LOG && go build &>>$LOG
