@@ -12,6 +12,9 @@ Head "Installing Maven"
 apt install maven -y &>>$LOG
 Stat $?
 
+Head "removing the directory"
+rmdir users
+
 Head "Cloning the repo"
 git clone https://github.com/ZS-Omkar/users.git
 
