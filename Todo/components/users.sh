@@ -12,9 +12,6 @@ Head "Installing Maven"
 apt install maven -y &>>$LOG
 Stat $?
 
-Head "removing the directory"
-rmdir users
-
 Head "Cloning the repo"
 git clone https://github.com/ZS-Omkar/users.git
 
@@ -23,5 +20,8 @@ cd users
 Head "cleaning the maven package"
 mvn clean package &>>$LOG
 
-Head "check the status of users"
-systemctl status users
+Head "Now move the user services"
+mv /home/todo/user/systemd.service /etc/systemd/system/user.service
+
+Head "Restart the services"
+systemctl daemon-reload && systemctl restart users && systemctl status users
