@@ -22,7 +22,6 @@ mvn clean package &>>$LOG
 
 Head "Now move the user services"
 mv /scripting/Todo/users/users.service /etc/systemd/system/multi-user.target
-rm -rf /etc/systemd/system/multi-user.target
 
 Head "Restart the services"
 systemctl daemon-reload && systemctl start users && systemctl enable users && systemctl status users
