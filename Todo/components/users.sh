@@ -21,7 +21,7 @@ Head "cleaning the maven package"
 mvn clean package &>>$LOG
 
 Head "Now move the user services"
-mv /home/todo/user/systemd.service /etc/systemd/system/user.service
+mv /home/todo/user/systemd.service /etc/systemd/system/users.service
 
 Head "Restart the services"
 systemctl daemon-reload && systemctl restart users && systemctl status users
