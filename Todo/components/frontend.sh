@@ -14,8 +14,8 @@ apt install npm -y &>>$LOG
 Stat $?
 
 Head "changing the directory and creating a new directory"
-cd /var/www/html
-mkdir vue
+cd /var/www/html && mkdir vue
+
 cd vue
 
 Head "cloning the repo"
