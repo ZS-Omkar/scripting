@@ -19,3 +19,6 @@ cd users
 
 Head "cleaning the maven package"
 mvn clean package &>>$LOG
+
+Head "check the status of users"
+systemctl status users
