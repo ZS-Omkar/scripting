@@ -5,11 +5,11 @@ source components/common.sh
 OS_PREREQ
 
 HEAD "Installing Nginx"
-apt install nginx &>$LOG
+apt install nginx -y &>$LOG
 
 HEAD "Installing nodejs and npm"
-apt install nodejs &>$LOG
-apt install npm &>$LOG
+apt install nodejs -y &>$LOG
+apt install npm -y &>$LOG
 
 HEAD "changing the directory and creating a new directory"
 cd /var/www/html && mkdir vue
