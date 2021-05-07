@@ -14,12 +14,12 @@ apt install npm &>$LOG
 HEAD "changing the directory and creating a new directory"
 cd /var/www/html && mkdir vue
 
-cd vue || exit
+cd vue
 
 HEAD "cloning the repo"
-git clone https://github.com/zelar-soft-todoapp/frontend.git
+git clone 'https://github.com/zelar-soft-todoapp/frontend.git'
 
-cd frontend ||  exit
+cd frontend
 
 HEAD "Installing the dependencies and run npm"
 npm install &>$LOG
