@@ -18,9 +18,4 @@ git clone https://github.com/ZS-Omkar/users.git
 cd users
 
 Head "cleaning the maven package"
-mvn clean package
-
-cd target
-
-Head "Start the users api services"
-java -jar users-api-0.0.1.jar
+mvn clean package &>>$LOG
