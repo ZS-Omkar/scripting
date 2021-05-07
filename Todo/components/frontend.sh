@@ -6,10 +6,12 @@ OS_PREREQ
 
 Head "Installing Nginx"
 apt install nginx -y &>>$LOG
+Stat $?
 
 Head "Installing nodejs and npm"
 apt install nodejs -y &>>$LOG
 apt install npm -y &>>$LOG
+Stat $?
 
 Head "changing the directory and creating a new directory"
 cd /var/www/html && mkdir vue
@@ -31,7 +33,10 @@ sed -i -e 's+root /var/www/html+root /var/www/html/vue/frontend/dist+g' /etc/ngi
 Head "Restarting nginx services"
 systemctl restart nginx
 systemctl enable nginx
+Stat $?
 
+Head "Start npm service"
+npm start
 
 
 
