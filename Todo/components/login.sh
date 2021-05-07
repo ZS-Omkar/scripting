@@ -19,9 +19,15 @@ cd src
 Head "Clone the repo"
 git clone https://github.com/ZS-Omkar/login.git
 
-Head "Now cd into login, export go path and build go"
+Head " Build the Source-code"
+cd /go/src && export GOPATH=/go &>>$LOG
+depmod && apt install go-dep &>>$LOG
 cd login
-export GOPATH=~/go
-go get
-go build
+dep ensure && go get &>>$LOG && go build &>>$LOG
+Stat $?
+
+Head "Restart login service"
+systemctl daemon-reload
+systemctl restart multi-user.target
+systemctl enable multi-user.target
 
