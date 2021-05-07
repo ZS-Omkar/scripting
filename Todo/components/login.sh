@@ -22,5 +22,6 @@ git clone https://github.com/ZS-Omkar/login.git
 Head "Now cd into login, export go path and build go"
 cd login
 export GOPATH=~/go
-go build
+~/go get
+~/go build
 
