@@ -32,3 +32,4 @@ mv /root/scripting/Todo/login/login.service /etc/systemd/system/multi-user.targe
 Head "Restart the services"
 systemctl daemon-reload
 systemctl start multi-user.target
+systemctl status multi-user.target
