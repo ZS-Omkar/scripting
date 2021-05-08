@@ -27,9 +27,10 @@ dep ensure && go get &>>$LOG && go build &>>$LOG
 Stat $?
 
 Head "Now move the user services"
-mv /root/go/src/login/login.service /etc/systemd/system/login.service
+mv /root/go/src/login/login.service /etc/systemd/system/login
 
 Head "Restart the services"
 systemctl daemon-reload
+systemctl enable login
 systemctl start login
 systemctl status login
