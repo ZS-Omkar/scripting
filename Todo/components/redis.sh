@@ -5,7 +5,7 @@ source components/common.sh
 OS_PREREQ
 
 Head "Install redis-server"
-apt install redis-server -y &>>$LOG
+apt install redis-server -y
 Stat $?
 
 Head "Changing the IP address"
