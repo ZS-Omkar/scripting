@@ -27,9 +27,9 @@ dep ensure && go get &>>$LOG && go build &>>$LOG
 Stat $?
 
 Head "Now move the user services"
-mv /root/go/src/login/login.service /etc/systemd/system/multi-user.target
+mv /root/go/src/login/login.service /etc/systemd/system/login.service
 
 Head "Restart the services"
 systemctl daemon-reload
-systemctl start multi-user.target
-systemctl status multi-user.target
+systemctl start login
+systemctl status login
