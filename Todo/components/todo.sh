@@ -18,7 +18,7 @@ cd todo
 npm start &>>$LOG
 
 Head "Changing the path"
-mv /root/scripting/Todo/todo/todo.service /etc/systemd/system/todo
+mv /root/scripting/Todo/todo/todo.service /etc/systemd/system/todo.service
 
 Head "Restart the todo service"
 systemctl daemon-reload
