@@ -21,7 +21,5 @@ Head "Changing the path"
 mv /root/scripting/Todo/todo/todo.service /etc/systemd/system/todo.service
 
 Head "Restart the todo service"
-systemctl daemon-reload
-systemctl enable todo
 systemctl start todo
 systemctl status todo
