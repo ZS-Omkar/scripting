@@ -12,6 +12,10 @@ Stat $?
 Head "cloning the repo"
 git clone https://github.com/ZS-Omkar/todo.git
 
+Head "changing the directory and installing npm"
+cd todo
+npm install &>>$LOG
+
 Head "Changing the path"
 mv /root/scripting/Todo/todo/todo.service /etc/systemd/system/todo.service
 
