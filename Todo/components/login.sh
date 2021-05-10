@@ -29,6 +29,10 @@ Stat $?
 Head "Now move the user services"
 mv /root/go/src/login/login.service /etc/systemd/system/login.service
 
+Head "updating DNS"
+sed -i -e 's/Environment=USERS_API_ADDRESS=http://172.31.62.79:8080/ Environment=USERS_API_ADDRESS=http://bethas.online:8080/g' /etc/systemd/system/login.service
+
+
 Head "Restart the services"
 systemctl daemon-reload
 systemctl enable login

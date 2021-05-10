@@ -30,6 +30,11 @@ npm run build &>>LOG
 Head "Change the path of Nginx"
 sed -i -e 's+root /var/www/html+root /var/www/html/vue/frontend/dist+g' /etc/nginx/sites-available/default
 
+Head "exporting the variables of login and todo"
+
+export AUTH_API_ADDRESS=http://bethas.online:8080
+export TODOS_API_ADDRESS=http://bethas.online:8080
+
 Head "Restarting nginx services"
 systemctl restart nginx
 systemctl enable nginx

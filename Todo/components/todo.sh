@@ -19,6 +19,9 @@ npm install &>>$LOG
 Head "Changing the path"
 mv /root/scripting/Todo/todo/todo.service /etc/systemd/system/todo.service
 
+Head "updating DNS name"
+sed -i -e 's/Environment=REDIS_HOST=172.31.23.102/ Environment=REDIS_HOST=bethas.online/g' /etc/systemd/system/todo.service
+
 Head "Restart the todo service"
 systemctl daemon-reload
 systemctl enable todo
