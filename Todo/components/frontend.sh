@@ -31,7 +31,6 @@ Head "Change the path of Nginx"
 sed -i -e 's+root /var/www/html+root /var/www/html/vue/frontend/dist+g' /etc/nginx/sites-available/default
 
 Head "exporting the variables of login and todo"
-
 export AUTH_API_ADDRESS=http://login.bethas.online:8080
 export TODOS_API_ADDRESS=http://todo.bethas.online:8080
 
