@@ -17,9 +17,13 @@ Head "Removing the default file in sites-available and sites-enabled"
 cd /etc/nginx/sites-available && rm -rf default
 cd /etc/nginx/sites-enabled && rm -rf default
 
-Head "changing the directory and creating a new directory"
-cd /var/www/html && mkdir vue
+Head "Removing html file"
+cd /var/www/html && rm -rf index.nginx-debian.html && mkdir vue
+Stat $?
 
+ls
+
+Head "changing the path of directory"
 cd vue
 
 Head "cloning the repo"
@@ -27,12 +31,12 @@ git clone https://github.com/ZS-Omkar/frontend.git
 
 cd frontend
 
+Head "moving the config file to nginx path"
+mv /var/www/html/vue/frontend/default.config /etc/nginx/sites-enabled
+
 Head "Installing the dependencies and run npm"
 npm install &>>$LOG
 npm run build &>>LOG
-
-Head "moving the config file to nginx path"
-mv /var/www/html/vue/frontend/default.config /etc/nginx/sites-enabled
 
 Head "Restarting nginx services"
 systemctl daemon-reload
