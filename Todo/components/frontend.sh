@@ -32,6 +32,8 @@ npm install &>>$LOG
 npm run build &>>LOG
 
 Head "Restarting nginx services"
-systemctl restart nginx
+systemctl daemon-reload
 systemctl enable nginx
+systemctl start nginx
+
 
