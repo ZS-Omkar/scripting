@@ -31,9 +31,12 @@ Head "Installing the dependencies and run npm"
 npm install &>>$LOG
 npm run build &>>LOG
 
+Head "moving the config file to nginx path"
+mv /var/www/html/vue/frontend/default.config /etc/nginx/sites-enabled
+
 Head "Restarting nginx services"
 systemctl daemon-reload
 systemctl enable nginx
-systemctl start nginx
+systemctl restart nginx
 
 
