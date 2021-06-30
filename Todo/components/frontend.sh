@@ -13,6 +13,10 @@ apt install nodejs -y &>>$LOG
 apt install npm -y &>>$LOG
 Stat $?
 
+Head "Removing the default file in sites-available and sites-enabled"
+cd /etc/nginx/sites-available && rm -rf default
+cd /etc/nginx/sites-enabled && rm -rf default
+
 Head "changing the directory and creating a new directory"
 cd /var/www/html && mkdir vue
 
@@ -26,13 +30,6 @@ cd frontend
 Head "Installing the dependencies and run npm"
 npm install &>>$LOG
 npm run build &>>LOG
-
-Head "Change the path of Nginx"
-sed -i -e 's+root /var/www/html+root /var/www/html/vue/frontend/dist+g' /etc/nginx/sites-available/default
-
-Head "exporting the variables of login and todo"
-export AUTH_API_ADDRESS=http://login.bethas.online:8080
-export TODOS_API_ADDRESS=http://todo.bethas.online:8080
 
 Head "Restarting nginx services"
 systemctl restart nginx
