@@ -34,10 +34,4 @@ npm run build &>>LOG
 Head "Restarting nginx services"
 systemctl restart nginx
 systemctl enable nginx
-Stat $?
-
-Head "Start npm service"
-npm start
-
-
 
