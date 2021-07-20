@@ -38,11 +38,8 @@ Head "Installing the dependencies and run npm"
 npm install &>>$LOG
 npm run build &>>LOG
 
-Head "exporting the variables of login and todo"
-
-export AUTH_API_ADDRESS=http://bethas.online:8080
-export TODOS_API_ADDRESS=http://bethas.online:8080
-
+Head "update the nginx configuration in the config file"
+sed -i -e "s/localhost1/todo.bethas.online/" /etc/nginx/sites-enabled/default.conf && sed -i -e "s/localhost2/login.bethas.online/" /etc/nginx/sites-enabled/default.conf
 
 Head "Restarting nginx services"
 systemctl daemon-reload
