@@ -26,7 +26,7 @@ cd login
 dep ensure && go get &>>$LOG && go build &>>$LOG
 Stat $?
 
-Head "Now move the user services"
+Head "Now move the services"
 mv /root/go/src/login/login.service /etc/systemd/system/login.service
 
 Head "updating DNS"
