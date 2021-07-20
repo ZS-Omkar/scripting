@@ -37,4 +37,3 @@ Head "Restart the services"
 systemctl daemon-reload
 systemctl enable login
 systemctl start login
-systemctl status login
