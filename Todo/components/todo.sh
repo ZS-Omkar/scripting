@@ -20,10 +20,9 @@ Head "Changing the path"
 mv /root/scripting/Todo/todo/todo.service /etc/systemd/system/todo.service
 
 Head "updating DNS name"
-sed -i -e 's/Environment=REDIS_HOST=172.31.0.187/Environment=REDIS_HOST=redis.bethas.online/g' /etc/systemd/system/todo.service
+sed -i -e "s/172.31.0.187/redis.bethas.online/" /etc/systemd/system/todo.service
 
 Head "Restart the todo service"
 systemctl daemon-reload
 systemctl enable todo
 systemctl start todo
-systemctl status todo
