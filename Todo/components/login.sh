@@ -11,19 +11,16 @@ source ~/.profile
 go version
 
 Head "create a directory and cd into the directory and create one more directory"
-mkdir ~/go
-cd ~/go
-mkdir src
-cd src
+mkdir ~/go && cd ~/go && mkdir src && cd src
 
 Head "Clone the repo"
 git clone https://github.com/ZS-Omkar/login.git
 
+cd login
+
 Head " Build the Source-code"
 export GOPATH=~/go &>>$LOG
-depmod && apt install go-dep &>>$LOG
-cd login
-dep ensure && go get &>>$LOG && go build &>>$LOG
+go get &>>$LOG && go build &>>$LOG
 Stat $?
 
 Head "Now move the services"
@@ -32,8 +29,7 @@ mv /root/go/src/login/login.service /etc/systemd/system/login.service
 Head "updating DNS"
 sed -i -e "s/172.31.1.135/users.bethas.online/" /etc/systemd/system/login.service
 
-
-Head "Restart the services"
+Head "Restart the service"
 systemctl daemon-reload
 systemctl enable login
-systemctl restart login
+systemctl start login
