@@ -30,7 +30,7 @@ Head "Now move the services"
 mv /root/go/src/login/login.service /etc/systemd/system/login.service
 
 Head "updating DNS"
-sed -i -e "s/http://172.31.1.135:8080/http://users.bethas.online:8080/g" /etc/systemd/system/login.service
+sed -i -e "s/172.31.1.135/users.bethas.online/" /etc/systemd/system/login.service
 
 
 Head "Restart the services"
