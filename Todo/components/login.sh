@@ -36,4 +36,4 @@ sed -i -e "s/172.31.1.135/users.bethas.online/" /etc/systemd/system/login.servic
 Head "Restart the services"
 systemctl daemon-reload
 systemctl enable login
-systemctl start login
+systemctl restart login
