@@ -39,7 +39,7 @@ npm install &>>$LOG
 npm run build &>>LOG
 
 Head "update the nginx configuration in the config file"
-sed -i -e "s/localhost1/todo.bethas.online/" /etc/nginx/sites-enabled/default.config && sed -i -e "s/localhost2/login.bethas.online/" /etc/nginx/sites-enabled/default.config
+sed -i -e "s/172.31.7.198/todo.bethas.online/" /etc/nginx/sites-enabled/default.config && sed -i -e "s/172.31.4.145/login.bethas.online/" /etc/nginx/sites-enabled/default.config
 
 Head "Restarting nginx services"
 systemctl daemon-reload
